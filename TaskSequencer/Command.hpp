@@ -52,12 +52,12 @@ namespace hex
 		if (m_cmdState != CmdState::Ready) {
 			return;
 		}
+		if (!m_command) { throw std::bad_function_call{}; }
 		m_cmdState = CmdState::Running;
 		m_controller.runningCount()++;
 		if (m_blockQ == BlocksQ::Yes || m_blockQ == BlocksQ::Join) {
 			m_controller.blockQ(m_cmdId, true);
 		}
-		CCASSERT(m_command, "Command callback cannot be empty.");
 		m_command(*this);
 	}
 }

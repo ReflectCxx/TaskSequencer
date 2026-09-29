@@ -1,6 +1,9 @@
 #pragma once
 
 #include <functional>
+#include <cstddef>
+#include <cstdint>
+#include <utility>
 #include "Constants.h"
 
 namespace hex
@@ -35,6 +38,3 @@ namespace hex
 				std::function<void(Command&)> pCmd);
 	};
 }
-
-#include "Command.hpp"
-#include "CommandController.hpp"

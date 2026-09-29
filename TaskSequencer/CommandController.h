@@ -2,6 +2,11 @@
 
 #include <deque>
 #include <optional>
+#include <functional>
+#include <cstdint>
+#include <cstddef>
+
+#include "Command.h"
 
 namespace hex
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "cocos2d.h"
+#include <cstdio>
 #include "CommandController.h"
 
 namespace hex
@@ -34,7 +34,7 @@ namespace hex
 			count++;
 		}
 		if (count > 0) {
-			CCLOG("Expired cmds count: %d", count);
+			(void)count;
 		}
 	}
 
@@ -59,7 +59,7 @@ namespace hex
 		}
 
 		if (m_commandQ.front().get().m_blockQ == BlocksQ::Join && runningCount() != 0) {
-			CCLOG("Waiting to finish executions, running count: { %lu }", runningCount());
+			
 			return std::nullopt;
 		}
 
